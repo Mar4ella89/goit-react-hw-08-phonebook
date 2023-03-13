@@ -1,0 +1,14 @@
+.authWrapper {
+margin-left: auto;
+}
+
+.authLink {
+    display: inline-block;
+    color: #ffffff;
+    margin: 0 5px;
+    
+        
+}
+.authLink:global(.active) {
+    color: #3a3587
+}

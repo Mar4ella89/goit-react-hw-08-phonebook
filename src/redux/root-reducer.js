@@ -5,7 +5,7 @@ import filterSlice from './filter/filter-slice';
 import authSlice from './auth/auth-slice';
 
 export const rootReducer = combineReducers({
-  aauth: authSlice,
+  auth: authSlice,
   contacts: contactsSlice,
   filter: filterSlice,
 });

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
+import { signup } from 'redux/auth/auth-operations';
 
 // import {
 //   fetchAllContacts,
@@ -15,7 +17,11 @@ const RegisterForm = () => {
     password: '',
   });
 
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+  const handleSignup = ({ name, email, password }) => {
+    dispatch(signup({ name, email, password }));
+  };
 
   //   useEffect(() => {
   //     dispatch(fetchAllContacts());
@@ -40,6 +46,7 @@ const RegisterForm = () => {
   const hadleSubmit = event => {
     event.preventDefault();
     // handleAddContact({ name, email, password });
+    handleSignup({ name, email, password });
     reset();
   };
 
@@ -79,7 +86,6 @@ const RegisterForm = () => {
             className={css.input}
             type="password"
             name="password"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,24}$"
             required
             value={password}
             onChange={handleChange}
