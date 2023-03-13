@@ -27,11 +27,18 @@ export const getCurrent = async token => {
   try {
     setToken(token);
     const { data } = await instance.get('/users/current');
+    console.log('current resp', data);
     return data;
   } catch (error) {
     setToken();
     throw error;
   }
+};
+
+export const logout = async () => {
+  const { data } = await instance.post('/users/logout');
+  setToken();
+  return data;
 };
 
 export default instance;

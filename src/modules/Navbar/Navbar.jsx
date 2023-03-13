@@ -11,7 +11,7 @@ const Navbar = () => {
   const isLogin = useSelector(isUserLogin);
   return (
     <div className={css.navList}>
-      <NavLink to="/">Logo</NavLink>
+      <NavLink to="/">Phonebook</NavLink>
 
       {!isLogin && <NavbarAuth />}
       {isLogin && <NavbarUser />}
