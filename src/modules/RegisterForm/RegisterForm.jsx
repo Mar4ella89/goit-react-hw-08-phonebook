@@ -65,10 +65,9 @@ const RegisterForm = () => {
           Email
           <input
             className={css.input}
-            type="tel"
+            type="email"
             name="email"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             required
             value={email}
             onChange={handleChange}
@@ -78,10 +77,9 @@ const RegisterForm = () => {
           Password
           <input
             className={css.input}
-            type="tel"
+            type="password"
             name="password"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,24}$"
             required
             value={password}
             onChange={handleChange}
@@ -89,7 +87,7 @@ const RegisterForm = () => {
         </label>
       </div>
       <button type="submit" className={css.addBtn}>
-        Add contact
+        Register
       </button>
     </form>
   );
