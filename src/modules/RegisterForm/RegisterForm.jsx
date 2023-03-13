@@ -1,12 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { signup } from 'redux/auth/auth-operations';
-
-// import {
-//   fetchAllContacts,
-//   fetchAddContact,
-// } from 'redux/contacts/contact-operations';
 
 import css from './registerForm.module.css';
 
@@ -23,15 +18,6 @@ const RegisterForm = () => {
     dispatch(signup({ name, email, password }));
   };
 
-  //   useEffect(() => {
-  //     dispatch(fetchAllContacts());
-  //   }, [dispatch]);
-
-  //   const handleAddContact = ({ name, email, password  }) => {
-  //     const action = fetchAddContact({ name, email, password  });
-  //     dispatch(action);
-  //   };
-
   const handleChange = event => {
     const { name, value } = event.currentTarget;
     setState(prevState => {
@@ -45,7 +31,6 @@ const RegisterForm = () => {
 
   const hadleSubmit = event => {
     event.preventDefault();
-    // handleAddContact({ name, email, password });
     handleSignup({ name, email, password });
     reset();
   };
