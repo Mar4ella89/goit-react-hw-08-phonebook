@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-// import navItems from './NavbarAuth/navItems';
+
 import NavbarAuth from './NavbarAuth/NavbarAuth';
 import NavbarUser from './NavbarUser/NavbarUser';
 import { isUserLogin } from 'redux/auth/auth-selectors';
