@@ -3,6 +3,8 @@ import { lazy, Suspense } from 'react';
 
 import AuthLayout from 'modules/AuthLayout/AuthLayout';
 
+import PrivateRoute from 'modules/PrivateRoute/PrivateRoute';
+
 const Navbar = lazy(() => import('./modules/Navbar/Navbar'));
 const ContactBooks = lazy(() => import('./Pages/ContactBooks/ContactBooks'));
 const LoginPage = lazy(() => import('./Pages/LoginPage/LoginPage'));
@@ -15,10 +17,13 @@ export const App = () => {
         <Suspense>
           <Navbar />
           <Routes>
-            <Route path="/contacts" element={<ContactBooks />} />
+            <Route element={<PrivateRoute />}>
+              <Route path="/contacts" element={<ContactBooks />} />
+            </Route>
+
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="*" element={<RegisterPage />} />
+            <Route path="*" element={<LoginPage />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
