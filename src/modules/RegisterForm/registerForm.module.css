@@ -1,3 +1,6 @@
+.container {
+    padding: 15px;
+}
 .inputWrapper {
     display: flex;
     flex-direction: column;

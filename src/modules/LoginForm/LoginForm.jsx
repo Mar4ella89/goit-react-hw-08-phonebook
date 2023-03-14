@@ -37,7 +37,7 @@ const LoginForm = () => {
   const { email, password } = state;
 
   return (
-    <form onSubmit={hadleSubmit}>
+    <form onSubmit={hadleSubmit} className={css.container}>
       <div className={css.inputWrapper}>
         <label className={css.label}>
           Email
