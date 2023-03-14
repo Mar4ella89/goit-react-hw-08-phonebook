@@ -14,7 +14,7 @@ const RegisterPage = lazy(() => import('./Pages/RegisterPage/RegisterPage'));
 export const App = () => {
   return (
     <AuthLayout>
-      <BrowserRouter>
+      <BrowserRouter basename="/goit-react-hw-08-phonebook/">
         <Suspense>
           <Navbar />
           <Routes>
